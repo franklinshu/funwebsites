@@ -323,8 +323,10 @@
 
             function showSiteInIframe(site) {
                 currentSite = site;
-                currentSiteName.textContent = site.name;
-                currentSiteUrl.textContent = site.url;
+               //currentSiteName.textContent = site.name;
+               // currentSiteUrl.textContent = site.url;
+                currentSiteName.textContent = 'Limited time, unlimited happiness';
+                currentSiteUrl.textContent = '';
                 siteIframe.src = site.url;
                 iframeContainer.classList.remove('hidden');
                 
