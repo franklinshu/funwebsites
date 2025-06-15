@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Fun Button</title>
+    <meta name="description" content="Get in touch with The Fun Button team. We'd love to hear from you about new websites, partnerships, or just to say hello!">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BVXTLXZV6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1BVXTLXZV6');
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FDFCFB;
+            color: #3A3D4D;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col">
+        
+        <header class="w-full p-4 border-b border-gray-200">
+            <nav class="max-w-6xl mx-auto flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-[#FF6F61]">The Fun Button</a>
+                <div class="space-x-4 md:space-x-6 text-sm md:text-base">
+                    <a href="index.html" class="text-gray-600 hover:text-[#FF6F61]">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-[#FF6F61]">About</a>
+                    <a href="contact.html" class="text-[#FF6F61] font-semibold">Contact</a>
+                    <a href="privacy.html" class="text-gray-600 hover:text-[#FF6F61]">Privacy</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow">
+            <div class="max-w-4xl mx-auto py-12 px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Let's Talk!</h1>
+                
+                <!-- Intro Section -->
+                <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-8 md:p-12 mb-8 text-center">
+                    <div class="text-5xl mb-4">📬</div>
+                    <h2 class="text-2xl font-bold mb-4">We Love Hearing From You</h2>
+                    <p class="text-xl text-gray-600">Got a cool website to share? A partnership idea? Just want to say hi? We're all ears and always excited to connect with fellow internet explorers!</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-8">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#FF6F61] focus:border-[#FF6F61]">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#FF6F61] focus:border-[#FF6F61]">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#FF6F61] focus:border-[#FF6F61]">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">What's this about? *</label>
+                                <select id="subject" name="subject" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#FF6F61] focus:border-[#FF6F61]">
+                                    <option value="">Choose a topic...</option>
+                                    <option value="website_suggestion">🌐 Website Suggestion</option>
+                                    <option value="bug_report">🐛 Bug Report</option>
+                                    <option value="partnership">🤝 Partnership/Collaboration</option>
+                                    <option value="media_inquiry">📰 Media/Press Inquiry</option>
+                                    <option value="feedback">💬 General Feedback</option>
+                                    <option value="other">❓ Something Else</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell us what's on your mind..." class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#FF6F61] focus:border-[#FF6F61]"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Where are you writing from?</label>
+                                <input type="text" id="country" name="country" placeholder="Your country/city (optional)" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#FF6F61] focus:border-[#FF6F61
