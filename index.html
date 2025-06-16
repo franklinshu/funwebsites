@@ -76,6 +76,21 @@
             height: 100%;
             border: none;
         }
+        .launch-again {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .launch-again:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
         .close-iframe {
             background: rgba(255, 255, 255, 0.2);
             border: none;
@@ -138,7 +153,7 @@
                                 <span class="ml-2 text-sm opacity-80" id="currentSiteUrl"></span>
                             </div>
                             <div>
-                                <button id="funButton" class="open-new-tab">Lunch Me</button> <!-- UPDATE 20250717 06:19-->
+                                <button id="launchAgain" class="launch-again">Launch Me </button> <!-- UPDATE 20250717 06:19-->
                                 <button id="openNewTab" class="open-new-tab">Remove Frame</button>
                                 <button id="closeIframe" class="close-iframe">Home</button>
                             </div>
@@ -222,6 +237,7 @@
             const siteIframe = document.getElementById('siteIframe');
             const currentSiteName = document.getElementById('currentSiteName');
             const currentSiteUrl = document.getElementById('currentSiteUrl');
+            const launchAgain = document.getElementById('launchAgain'); // add button launchAgain
             const closeIframe = document.getElementById('closeIframe');
             const openNewTab = document.getElementById('openNewTab');
 
@@ -397,6 +413,17 @@
                     showSiteInIframe(nextSite);
                     messageArea.classList.add('opacity-0');
                 }, 1000);
+            });
+
+            // 增加lunchagain 事件监听
+            randomNext.addEventListener('click', () => {
+                let nextSite;
+                do {
+                    nextSite = sitesData[Math.floor(Math.random() * sitesData.length)];
+                } while (nextSite.url === currentSite.url && sitesData.length > 1);
+                
+                lastSiteUrl = nextSite.url;
+                showSiteInIframe(nextSite);
             });
 
             // iframe控制事件
