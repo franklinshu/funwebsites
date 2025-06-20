@@ -258,8 +258,8 @@
                 { id: 'ascii_face', name: 'ASCII Face', url: 'http://www.asciiface.com/', description: 'Generate ASCII art faces for all your emoticon needs.' }, 
                 
                 { id: 'weirdorconfusing', name: 'Weird or Confusing', url: 'https://weirdorconfusing.com/', description: 'Shows you something weird or confusing every time. You never know what to expect.' },
-                { id: 'opticaltoys', name: 'opticaltoys', url: 'https://optical.toys/ical.toys//', description: 'funny game' },
-                { id: 'hackertyper', name: 'Hacker Typer', url: 'https://hackertyper.net/', description: 'Mash your keyboard to produce “hacker-like” code. Impress coworkers instantly.' },
+                
+               
                
                 /* 剩余 40 个示例（简化展示） */
                 
@@ -290,7 +290,7 @@
                 { id: 'hiddenfunk', name: 'Hidden Funk', url: 'http://hiddenfunk.net/', description: 'Mysterious hidden funk beats generator.' },
                 { id: 'patienceisvirtue', name: 'Patience is a Virtue', url: 'http://www.patience-is-a-virtue.org/', description: '… patience is indeed a virtue. Wait & smile.' },
                 { id: 'snowday', name: 'let it snow', url: 'https://mrdoob.com/projects/snow/', description: 'Snow falling overlay effect—cozy web vibe.' },
-                { id: 'tinygraphs', name: 'Tiny Graphs', url: 'https://tinygraphs.com/', description: 'Generate cute tiny avatars/graphs for users.' },
+               
                 { id: 'dotkeepr', name: 'Dot Keeper', url: 'https://dotkeeper.benjojo.co.uk/', description: 'Keep dot alive by dragging it—simple joy.' },
                 { id: 'thequietplace', name: 'The Quiet Place', url: 'http://thequietplaceproject.com/', description: 'A quiet interactive meditation with no words.' },
                 { id: 'findtheinvisiblecow', name: 'Find the Invisible Cow', url: 'http://findtheinvisiblecow.com/', description: 'Audio-guided hidden cow search—fun lead.' },
@@ -446,13 +446,21 @@
 
             // 增加lunchagain 事件监听
             launchAgain.addEventListener('click', () => {
+              const randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+                messageArea.textContent = randomMessage;
+                messageArea.classList.remove('opacity-0');
+
                 let nextSite;
                 do {
                     nextSite = sitesData[Math.floor(Math.random() * sitesData.length)];
-                } while (nextSite.url === currentSite.url && sitesData.length > 1);
+                } while (nextSite.url === lastSiteUrl && sitesData.length > 1);
                 
                 lastSiteUrl = nextSite.url;
-                showSiteInIframe(nextSite);
+
+                setTimeout(() => {
+                    showSiteInIframe(nextSite);
+                    messageArea.classList.add('opacity-0');
+                }, 1000);
             });
 
             // iframe控制事件
